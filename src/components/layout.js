@@ -25,12 +25,16 @@ const Layout = ({ title, children }) => {
   return (
     <>
       <SEO title={title} />
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div>
+      <div
+        style={{
+          marginLeft: "100px",
+          marginRight: "100px",
+        }}
+      >
+        <Header siteTitle={data.site.siteMetadata.title || `Title`} />
         <div>
-          <h1>{title}</h1>
+          <main>{children}</main>
         </div>
-        <main>{children}</main>
       </div>
     </>
   );

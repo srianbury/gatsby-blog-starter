@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `srianbury Gatsby Default Starter`,
-    description: `a modified version of the default starter`,
+    title: `starter`,
+    description: `Gatsby starter for (dev) blogs.`,
     author: `srianbury`,
   },
   plugins: [
@@ -13,13 +13,26 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/content`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-images`, `gatsby-remark-prismjs`],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `srianbury`,
+        short_name: `sb`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
